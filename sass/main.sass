@@ -1,0 +1,111 @@
+//Colores
+
+$color__negro: #13252c
+$color__blanco: #fefefe
+$color__salmon: #feb58b
+$color__amarillo: #f9de83
+$color__azul: #a0d8e7
+$color__verde: #adecb2
+
+//Medidas
+
+$container: 40rem
+$container--small: 30rem
+
+//Tipografias
+
+$font__principal: "recolectaalt"
+$font__texto: "araboto"
+
+@font-face
+  font-family: $font__principal
+  src: url("../font/RecoletaAlt-Medium.woff2") format("woff2")
+  font-display: swap
+
+@font-face
+  font-family: $font__texto
+  src: url("../font/Araboto-Medium-400.woff2") format("woff2")
+  font-display: swap
+
+//Base
+
+body
+  font-family: $font__texto
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font__principal
+  font-weight: normal
+
+//Componentes
+
+.container
+  max-width: $container
+  margin: 0 auto
+  padding: 1rem
+  &--small
+    max-width: $container--small
+
+.button
+  display: inline-block
+  border: 2px solid $color__negro
+  padding: .5rem
+  text-decoration: none
+  color: $color__negro
+  background-color: $color__salmon
+  box-shadow: .05rem .05rem 0 $color__negro, .1rem .1rem 0 $color__negro, .15rem .15rem 0 $color__negro, .2rem .2rem 0 $color__negro, .25rem .25rem 0 $color__negro, .3rem .3rem 0 $color__negro, .35rem .35rem 0 $color__negro, .40rem .40rem 0 $color__negro
+  &:hover
+    background-color: darken($color__salmon, 10%)
+  &--transparente
+    background: initial
+    box-shadow: initial
+    border: initial
+    &:hover
+      background-color: initial
+      color: $color__salmon
+  &--redondo
+    border-radius: 1.5rem
+    box-shadow: 0 .05rem 0 $color__negro, 0 .1rem 0 $color__negro, 0 .15rem 0 $color__negro, 0 .2rem 0 $color__negro, 0 .25rem 0 $color__negro
+  &-amarillo
+    background-color: $color__amarillo
+    &:hover
+      background-color: darken($color__amarillo, 10%)
+  &-verde
+    background-color: $color__verde
+    &:hover
+      background-color: darken($color__verde, 10%)
+  &-azul
+    background-color: $color__azul
+    &:hover
+      background-color: darken($color__azul, 10%)
+
+.nav
+  &__ul
+    list-style: none
+    padding: 0
+    display: flex
+    gap: 1rem
+
+.header
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__logo
+    display: flex
+    gap: 1rem
+  &__titulo
+    margin: 0
+
+
+//Landing
+
+.landing
+  &__titulo
+    font-size: 4rem
+    margin-bottom: 2rem
+
+.footer
+  &__texto
+    margin-bottom: 0
+  &__fecha
+    font-size: 1.3rem
